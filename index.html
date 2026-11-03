@@ -230,7 +230,7 @@ html.phone body.timed .rank .btn{position:static!important;box-shadow:none!impor
 html.phone body.timed .lockbar{bottom:calc(64px + env(safe-area-inset-bottom))!important}
 html.phone body.timed .p3 .pbar{bottom:calc(64px + env(safe-area-inset-bottom))}
 .nwser{font:600 12px/1.4 Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}.nwser b{color:#b8663a;font-weight:700}.nwser a{color:inherit;text-decoration:underline;text-underline-offset:3px}.nwser a:hover{color:var(--ink)}a.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
-</style>
+/* phones: the answer bar sits under the last choice instead of floating over it (Ville's S25 bug) */@media (max-width:759px){.pbar{position:relative!important;bottom:auto!important;margin-top:10px}}html.phone .pbar{position:relative!important;bottom:auto!important;margin-top:10px}</style>
 </head>
 <body>
 <div class="wrap" id="app"></div>
