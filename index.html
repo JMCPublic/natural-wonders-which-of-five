@@ -236,7 +236,7 @@ html.phone body.timed .p3 .pbar{bottom:calc(64px + env(safe-area-inset-bottom))}
 <div class="wrap" id="app"></div>
 <div class="toast" id="toast"></div>
 <script>
-const VERSION='v12';
+const VERSION='v13';
 /* ---------- timer (shared) ---------- */
 const TM={on:true,left:0,secs:15,copper:5,t0:0,iv:null,key:null,onUp:null,
   start(key,secs,copper,onUp){if(!this.on){this.hide();return}if(this.key===key&&this.iv)return;this.stop();this.key=key;this.secs=secs;this.copper=copper;this.onUp=onUp;this.t0=performance.now();this.build();this.draw(secs);
@@ -681,11 +681,11 @@ forests:`<g fill="${L}"><path d="M10 40 L20 8 L30 40Z"/><path d="M28 40 L40 4 L5
 const GAMES=[
 {n:'Rivers',slug:'rivers',ic:'rivers',t:'Put the world’s great rivers in order of length. The Nile or the Amazon? The answers might surprise you.'},
 {n:'Lakes',slug:'lakes',ic:'lakes',t:'Rank lakes by area, depth or length. Each round tells you which, so read the question first.'},
-{n:'Bodies of Water',slug:'bodies-of-water',ic:'water',t:'A sea, strait or lake lights up on the map. Can you name it from five?'},
+{n:'Bodies of Water',slug:'bodies-of-water',ic:'water',t:'A sea, strait or lake lights up on the map. Can you name it from four?'},
 {n:'Mountains',slug:'mountains',ic:'mountains',t:'Line up the peaks by height and watch the skyline reveal the order, or name the marked summit.'},
 {n:'Deserts',slug:'deserts',ic:'deserts',t:'Not every desert is hot or sandy. Rank them by size, or name the one that’s highlighted.'},
 {n:'How Many Borders?',slug:'how-many-borders',ic:'borders',t:'One country in silhouette. How many neighbours does it touch by land? Then see them all.'},
-{n:'River Cities',slug:'river-cities',ic:'cities',t:'A river winds through a country. Which of ten cities sit on its banks?'},
+{n:'River Cities',slug:'river-cities',ic:'cities',t:'A river winds through a country. Which of five cities sit on its banks?'},
 {n:'Where is Bigger?',slug:'where-is-bigger',ic:'bigger',t:'Two countries side by side. Which covers more land? Maps have been fooling you for years.'},
 {n:'Which of Five?',slug:'which-of-five',ic:'five',t:'One country to beat and five challengers. Tick every one that’s bigger, then see them all to scale.'},
 {n:'Forests',slug:'forests',ic:'forests',t:'From the Amazon to Sherwood. Rank the world’s forests by area, or name the one marked on the map.'}];
@@ -788,7 +788,7 @@ let v,kind='idea';
 const dev=()=>{const c=matchMedia('(pointer:coarse)').matches,m=Math.min(screen.width,screen.height);return c?(m>=600?'tablet':'phone'):'desktop'};
 function build(){v=document.createElement('div');v.className='tmgfb-v';v.hidden=true;
   v.innerHTML=`<form class="tmgfb-c" role="dialog" aria-label="Feedback or report a problem"><h2>Tell us what you think</h2>
-  <p>Ideas, likes, gripes or something broken. It goes privately to Two Minute Games; nobody else can read it.</p>
+  <p>Choose Idea, Like it or Something’s wrong and let us know. It goes privately to the Two Minute Games back office only. It isn’t a public message, and nobody else can read it.</p>
   <div class="tmgfb-chips">${KINDS.map(k=>`<button type="button" class="tmgfb-chip" data-k="${k[0]}" aria-pressed="${k[0]===kind}">${k[1]}</button>`).join('')}</div>
   <textarea maxlength="1500" required aria-label="Your message"></textarea>
   <input maxlength="150" autocomplete="email" placeholder="Name or email, only if you’d like a reply (optional)" aria-label="Name or email (optional)">
